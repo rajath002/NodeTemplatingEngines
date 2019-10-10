@@ -3,12 +3,17 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const expressHbs = require('express-handlebars');
+
+
 const app = express();
+app.engine('hbs', expressHbs());
+app.set("view engine", "hbs");
 
 // Setting view-engine to pug.
-app.set("view engine", "pug");
+// app.set("view engine", "pug");
 // Setting templating folder/directory Default is pug
-app.set("views", "views")
+app.set("views", "views");
 
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
