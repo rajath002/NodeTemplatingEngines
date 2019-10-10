@@ -5,6 +5,11 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+// Setting view-engine to pug.
+app.set("view engine", "pug");
+// Setting templating folder/directory Default is pug
+app.set("views", "views")
+
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
